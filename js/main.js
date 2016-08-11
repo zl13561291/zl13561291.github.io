@@ -76,16 +76,12 @@ var This;
 var _This;
 //用于存储数据渲染子文件夹
 var delJson = {};
-//当前双击的mId
-var ThisMid ;
 
 //调用日历对象
 calendar.onclick = function(){
     var showDate1 = new showDate({ id: "data_box" });
     showDate1.init();
 };
-
-
 
 //渲染开始菜单左侧列表,鼠标移入移出
 var st_tex_ul =document.querySelector('.st_tex_ul');
@@ -199,6 +195,11 @@ start.onclick = function (ev) {
 
 //删除文件夹
 del.addEventListener('click', function () {
+    for(var attr in delJson){
+        if(This.mId == attr){
+            delete delJson[attr];
+        }
+    }
     for(var i=0;i<fileArr.length;i++){
         if(fileArr[i].pId == This.mId){
             fileArr.splice(i,fileArr.length-4);
@@ -217,12 +218,6 @@ del.addEventListener('click', function () {
     //当目标不是回收站时,删除文件夹
     if (This != recycle_bin) {
         if(This.pId == 0){
-            console.log(This.mId);
-            for(var attr in delJson){
-                if(This.mId == delJson[attr][0]){
-                    delete delJson[attr];
-                }
-            }
             var timer1 = setInterval(function(){
                 This.style.transform +='rotate('+10+'deg)';
             },16);
@@ -240,7 +235,7 @@ del.addEventListener('click', function () {
             var timer = setInterval(function(){
                 This.style.transform +='rotate('+10+'deg)';
             },16);
-            // mTween(This,{opacity:0,width:30,height:30},500,'backIn',function(){
+             mTween(This,{opacity:0,width:30,height:30},500,'backIn',function(){
             kou[0].children[2].removeChild(This);
             for (var i = 0; i < fileArr.length; i++) {
                 if (This == fileArr[i]) {
@@ -248,7 +243,7 @@ del.addEventListener('click', function () {
                     clearInterval(timer);
                 }
             }
-            //    });
+                });
         }
 
     }
@@ -384,17 +379,7 @@ newFile.addEventListener('click', function () {
     } else {
         //否则根据点击的目标源
         createFile(tar, 5);
-        //  console.log(tar.offsetParent.MID);
-        /*var a = 0;
-         for(var i=0;i<fileArr.length;i++){
-         if(fileArr[i].pId == tar.offsetParent.MID){
-         fileArr[i].style.left = 0;
-         fileArr[i].style.top = 0;
-         fileArr[i].style.left = Math.floor(a / 5) * 90 + 'px';
-         fileArr[i].style.top = Math.floor(a % 5) * 90 + 'px';
-         a++;
-         }
-         }*/
+
         //for循环去遍历，转变布局，自然向下排序
         var a = 0;
         for(var i=0;i<fileArr.length;i++){
@@ -490,17 +475,8 @@ function dblNewFile(obj) {
                         delJson[attr][1].style.left = Math.floor(b / 5) * 90 + 'px';
                         delJson[attr][1].style.top = Math.floor(b % 5) * 90 + 'px';
                         b++;
-                        console.log(delJson[attr]);
                     }
-                    /*delJson[attr].mId = attr;
-                     kou.children[2].appendChild(delJson[attr]);
-                     delJson[attr].style.left = 0;
-                     delJson[attr].style.top = 0;
-                     delJson[attr].style.left = Math.floor(b / 5) * 90 + 'px';
-                     delJson[attr].style.top = Math.floor(b % 5) * 90 + 'px';
-                     b++;*/
                 }
-                //delJson = {};
                 //如果窗口存在,在窗口内画框
                 if (Ftext[0]) {
                     huaKuang(Ftext[0]);
@@ -530,7 +506,7 @@ function dblNewFile(obj) {
                                 })
                             };
                         } else if (this.index == 1) {
-                            // mTween(kou,{width:document.documentElement.clientWidth,height:document.documentElement.clientHeight},500,'linear')
+                            //最大化窗口
                         } else if (this.index == 2) {
                             for(var i=0;i<fileArr.length;i++){
                                 if(fileArr[i].pId == kou.MID){
