@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet">
+    <script src="js/mTween.js"></script>
+    <script src="js/Mdata.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="con"></div>
+    <div class="footer">
+        <div class="start"></div>
+        <ul class="footer_ll">
+            <!-- <li>123</li>-->
+        </ul>
+
+        <ul class="footer_lr">
+            <li class="r1"></li>
+            <li class="r2"></li>
+            <li class="r3"></li>
+            <li class="r4"></li>
+            <li class="r5"></li>
+        </ul>
+        <div class="clearfix dome3_box">
+            <div class="data_box" id="data_box">
+                <div class="showDate"></div>
+                <div class="sel_date dn">
+                    <div class="clearfix">
+                        <span class="prev_y fl">&lt;&lt;</span><span class="prev_m fl">&lt;</span>
+                        <span class="next_y fr">&gt;&gt;</span><span class="next_m fr">&gt;</span>
+                        <div class="show_mn">
+                            <input type="text" class="showDate2 year" value="选择年份" />
+                            <span class="ml5 mr5">年</span>
+                            <input type="text" class="showDate2 month" value="选择月份" />
+                            <span class="ml5">月</span>
+                        </div>
+                    </div>
+                    <table class="data_table">
+                        <thead>
+                        <tr>
+                            <td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="start_div">
+            <div class="st_img"></div>
+            <div class="st_tex">
+                <ul class="st_tex_ul">
+                    <!--<li><img src="img/imgs1/fo1.ico" /><p>搜狗高速浏览器</p></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>-->
+                    <div class="findT">
+                        <input type="text" value="搜索程序和文件"/>
+                    </div>
+                </ul>
+            </div>
+            <div class="st_val">
+                <ul class="st_val_ul">
+                    <li>ThinkPad</li>
+                    <li>文档</li>
+                    <li>图片</li>
+                    <li>音乐</li>
+                    <li>计算机</li>
+                    <li>控制面板</li>
+                    <li>设备和打印机</li>
+                    <li>默认程序</li>
+                    <li>帮助和支持</li>
+                </ul>
+                <p class="stop_com">
+                    关机
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="me">
+        <ul id="menu">
+            <li>
+                <h2>查看<span>+</span></h2>
+                <ul>
+                    <li><h2>大图标</h2></li>
+                    <li><h2>中等图标</h2></li>
+                    <li><h2>小图标</h2></li>
+                    <li><h2>自动排列图标</h2></li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="chaPic">切换背景图片</h2>
+            </li>
+
+            <li>
+                <h2 class="forName">排序</h2>
+
+            </li>
+            <li>
+                <h2 class="Refresh">重置</h2>
+            </li>
+            <li>
+                <h2>图形选项<span>+</span></h2>
+                <ul>
+                    <li>
+                        <h2>屏面适应<span>+</span></h2>
+                        <ul>
+                            <li><h2>保持显示缩放比</h2></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>快捷键<span>+</span></h2>
+                        <ul>
+                            <li><h2>启用</h2></li>
+                            <li><h2>禁用</h2></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>系统拖盘图标<span>+</span></h2>
+                        <ul>
+                            <li><h2>启用</h2></li>
+                            <li><h2>禁用</h2></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>气球通知<span>+</span></h2>
+                        <ul>
+                            <li>
+                                <h2>图形属性通知<span>+</span></h2>
+                                <ul>
+                                    <li><h2>启用</h2></li>
+                                    <li><h2>禁用</h2></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>最佳分辨率通知<span>+</span></h2>
+                                <ul>
+                                    <li><h2>启用</h2></li>
+                                    <li><h2>禁用</h2></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>旋转<span>+</span></h2>
+                        <ul>
+                            <li><h2>旋转至正常</h2></li>
+                            <li><h2>旋转至90度</h2></li>
+                            <li><h2>旋转至180度</h2></li>
+                            <li><h2>旋转至270度</h2></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="del">删除</h2>
+            </li>
+            <li>
+                <h2 class="newF">新建<span>+</span></h2>
+                <ul>
+                    <li><h2 class="newFile">新建文件夹</h2></li>
+                </ul>
+            </li>
+            <li>
+                <h2>个性化</h2>
+            </li>
+            <li>
+                <h2 class="reSetName">重命名</h2>
+            </li>
+        </ul>
+    </div>
+    <script src="js/mTween.js"></script>
+    <script src="js/Mdata.js"></script>
+    <script src="js/Calendar.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
